@@ -1,6 +1,10 @@
+#import base64
+#from Crypto import Random
+#from Crypto.Cipher import AES
 import base64
-from Crypto import Random
-from Crypto.Cipher import AES
+from pycryptodome import Random
+from pycryptodome import AES
+
 
 class AESCipher(object):
     def __init__(self, key, block_size=32):
