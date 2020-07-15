@@ -1,9 +1,9 @@
-#import base64
-#from Crypto import Random
-#from Crypto.Cipher import AES
 import base64
-from pycryptodome import Random
-from pycryptodome import AES
+from Crypto import Random
+from Crypto.Cipher import AES
+#import base64
+#from pycryptodome import Random
+#from pycryptodome import AES
 
 
 class AESCipher(object):
