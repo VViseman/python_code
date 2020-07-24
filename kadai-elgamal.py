@@ -40,7 +40,8 @@ def key_generate( k ):
     return ( p, g, y ), x
 
 # plain_textをpkを使って暗号化する
-def encrypt( m, pk ):
+
+def encrypt(m, pk):
     cipher = []
     p, g, y = pk
     r = random.randint( 0, p-1 )
@@ -64,11 +65,13 @@ def decrypt( c, pk, sk ):
 
 #main文
 if __name__ == '__main__':
-    pk, sk = key_generate(8)
-#    plain_text = 'You can always become better.'
-    plain_text = '1234567'
+#    pk, sk = key_generate(8)
+    pk, sk = ((13, 2, 3),2)
+    plain_text = 'You can always become better.'
+#    plain_text = '1234567'
     plain_code = code(plain_text)     # plain_textを文字コードにする
-    cipher = encrypt(plain_text, pk)  # plain_textをpkを使って暗号化する
+#    cipher = encrypt(plain_text, pk)  # plain_textをpkを使って暗号化する
+    cipher = encrypt(plain_text, ((13, 2, 3), 2))  # plain_textをpkを使って暗号化する
     decode = decrypt(cipher, pk, sk)  # plain_textをcipher, pk, skを使って復号化する
     decode_code = code( decode )      # 復号化で得られたdecodeを平文にする
 
